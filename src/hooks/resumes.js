@@ -31,7 +31,7 @@ export const useResumes = () => {
 export const useResume = (id) => {
   const [resume, setResume] = useState(null);
 
-  const { getById, edit } = useContext(ResumesContext);
+  const { getById, update } = useContext(ResumesContext);
 
   useEffect(() => {
     const fetchResume = async () => {
@@ -43,9 +43,9 @@ export const useResume = (id) => {
 
   return {
     resume,
-    save: async (id, data) => {
-      setResume(data);
-      await edit(id, data);
+    setResume: (newResume) => setResume(newResume),
+    save: async () => {
+      await update(resume.id, resume);
     },
   };
 };

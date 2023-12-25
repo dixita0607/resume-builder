@@ -1,3 +1,5 @@
+import defaultResume from "../../utils/resume-schema.json";
+
 const getAll = async () => {
   return JSON.parse(localStorage.getItem("resumes")) || [];
 };
@@ -8,19 +10,30 @@ const add = async (newResume) => {
     "resumes",
     JSON.stringify([newResume, ...existingResumes])
   );
-  localStorage.setItem(`resume_${newResume.id}`, JSON.stringify(newResume));
+  localStorage.setItem(
+    `resume.${newResume.id}`,
+    JSON.stringify(
+      Object.assign(
+        {
+          ...newResume,
+          ...defaultResume,
+        },
+        Object.create(null)
+      )
+    )
+  );
 };
 
 const getById = async (resumeId) => {
-  return JSON.parse(localStorage.getItem(`resume_${resumeId}`));
+  return JSON.parse(localStorage.getItem(`resume.${resumeId}`));
 };
 
 const update = async (resumeId, data) => {
-  localStorage.setItem(resumeId, JSON.stringify(data));
+  localStorage.setItem(`resume.${resumeId}`, JSON.stringify(data));
 };
 
 const remove = async (resumeId) => {
-  localStorage.removeItem(`resume_${resumeId}`);
+  localStorage.removeItem(`resume.${resumeId}`);
   const existingResumes = await getAll();
   localStorage.setItem(
     "resumes",
