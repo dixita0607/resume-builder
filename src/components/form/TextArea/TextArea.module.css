@@ -1,0 +1,9 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.textarea-container > label {
+  font-size: 12px;
+}

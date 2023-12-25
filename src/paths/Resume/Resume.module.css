@@ -1,0 +1,14 @@
+.resume-container {
+  padding: 32px;
+  padding-top: 0;
+}
+
+.resume-title {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.editor-preview-container {
+  display: flex;
+  justify-content: center;
+}

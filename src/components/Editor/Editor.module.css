@@ -1,0 +1,40 @@
+.editor-form {
+  border-right: 1px solid var(--sub-text-color);
+  padding: 24px;
+  padding-top: 0;
+}
+
+.editor-form > fieldset {
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  background-color: var(--complimentary-bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-form > fieldset > legend {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 48px;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.section-card {
+  border-radius: 4px;
+  padding: 8px;
+  border: 0.5px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.delete-button {
+  align-self: flex-end;
+}
+
+.add-button {
+  align-self: flex-end;
+}
