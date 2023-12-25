@@ -1,0 +1,46 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container-card {
+  padding: 32px;
+  border-radius: 4px;
+  width: 400px;
+}
+
+.resume-form {
+  display: flex;
+  align-items: center;
+}
+
+.resume-form input {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.resume-list {
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-title {
+  flex: 1;
+}
+
+.list-button {
+  padding-right: 0;
+  text-align: right;
+}
+
+.empty-placeholder {
+  margin: 32px 0;
+  color: var(--sub-text-color);
+}

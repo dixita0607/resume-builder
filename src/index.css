@@ -9,5 +9,66 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+body.theme-none {
+  --bg-color: #ffffff;
+  --complimentary-bg-color: #eff7f6;
+  --primary-color : #004e89;
+  --accent-color: #81b29a;
+  --color: #000000;
+  --danger-color: #e63946;
+  --success-color: #84a59d;
+  --complimentary-color: #ffffff;
+  --sub-text-color: #8d99ae;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: unset;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--complimentary-color);
+  border: 0;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px
+}
+button:active {
+  outline: none;
+}
+button.link {
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+button.link.danger {
+  color: var(--danger-color);
+}
+
+input, textarea {
+  padding: 6px;
+  border-radius: 4px;
+  border: 0.5px solid var(--primary-color);
+}
+
+.row {
+  display: flex;
+}
+.row>* {
+  flex: 1;
+}
+.row>:not(:last-child) {
+  margin-right: 8px;
 }
