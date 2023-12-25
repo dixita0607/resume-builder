@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./paths/Home";
 import Resume from "./paths/Resume";
 import NotFound from "./paths/404";
+import ResumesContext from "./contexts/resumes";
+import * as localStorage from "./contexts/resumes/localStorage.js";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +21,8 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <>
+    <ResumesContext.Provider value={localStorage}>
       <RouterProvider router={router} />
-    </>
+    </ResumesContext.Provider>
   );
 }
