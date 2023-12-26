@@ -20,14 +20,15 @@ function Home() {
   };
 
   return (
-    <main>
+    <>
       <Header />
-      <div className={styles["home-container"]}>
-        <div className={styles["home-container-card"]}>
+      <section className={styles["home-container"]} aria-label="Interface">
+        <div className={styles["home-container-card"]} aria-label="Card">
           <form
             onSubmit={handleAddResume}
             ref={formRef}
             className={styles["resume-form"]}
+            aria-label="Add Resume"
           >
             <input
               type="text"
@@ -38,11 +39,16 @@ function Home() {
             <button>Add</button>
           </form>
           {resumes.length > 0 ? (
-            <ul className={styles["resume-list"]}>
+            <ul className={styles["resume-list"]} aria-label="Resumes">
               {resumes.map((resume) => (
                 <li className={styles["list-item"]} key={resume.id}>
-                  <div className={styles["list-title"]}>{resume.title}</div>
-                  <div>
+                  <span
+                    className={styles["list-title"]}
+                    aria-label={resume.title}
+                  >
+                    {resume.title}
+                  </span>
+                  <span aria-label="Actions">
                     <Link to={`/${resume.id}`}>
                       <button
                         className={`link ${styles["list-button"]}`}
@@ -58,7 +64,7 @@ function Home() {
                     >
                       Delete
                     </button>
-                  </div>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -68,8 +74,8 @@ function Home() {
             </div>
           )}
         </div>
-      </div>
-    </main>
+      </section>
+    </>
   );
 }
 

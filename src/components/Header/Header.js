@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
-    <NavLink to="/">
+    <NavLink to="/" aria-label="Home">
       <h1 className={styles.title}>Resume Builder</h1>
     </NavLink>
   );

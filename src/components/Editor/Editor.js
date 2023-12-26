@@ -75,19 +75,20 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
       ref={formRef}
       onSubmit={handleSubmit}
       className={styles["editor-form"]}
+      aria-label="Resume Form"
     >
       <div className={styles["form-buttons"]}>
         <h2 className={styles["resume-title"]}>{resume?.title}</h2>
-        <div>
+        <div aria-label="Actions">
           <button type="button" className="link danger" onClick={onCancel}>
             Cancel
           </button>
           <button>Save</button>
         </div>
       </div>
-      <div className={styles["form-section"]}>
+      <div className={styles["form-section"]} aria-hidden>
         <div className={styles["form-section-title"]}>Personal Information</div>
-        <div className="row">
+        <div className="row" aria-hidden>
           <Input
             label="Name"
             type="text"
@@ -134,7 +135,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
           />
         </div>
       </div>
-      <div className={styles["form-section"]}>
+      <div className={styles["form-section"]} aria-hidden>
         <div className={styles["form-section-title"]}>Experience</div>
         {resume.work.map((work, index) => (
           <div key={index.toString()} className={styles["section-card"]}>
@@ -205,7 +206,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
           Add Experience
         </button>
       </div>
-      <div className={styles["form-section"]}>
+      <div className={styles["form-section"]} aria-hidden>
         <div className={styles["form-section-title"]}>Education</div>
         {resume.education.map((education, index) => (
           <div key={index.toString} className={styles["section-card"]}>
@@ -281,7 +282,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
           Add Education
         </button>
       </div>
-      <div className={styles["form-section"]}>
+      <div className={styles["form-section"]} aria-hidden>
         <div className={styles["form-section-title"]}>Skills</div>
         {resume.skills.map((skill, index) => (
           <div key={index.toString()} className={styles["section-card"]}>

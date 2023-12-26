@@ -18,27 +18,30 @@ export default function Resume() {
   const handleCancel = () => navigate(-1);
 
   return (
-    <main>
+    <>
       <Header />
-      <div className={styles["resume-container"]}>
+      <section className={styles["resume-container"]} aria-label="Interface">
         <div className={styles["editor-preview-container"]}>
           {resume && (
-            <div className={styles["editor-container"]}>
+            <section className={styles["editor-container"]} aria-label="Editor">
               <Editor
                 resume={resume}
                 onChange={setResume}
                 onSave={handleSave}
                 onCancel={handleCancel}
               />
-            </div>
+            </section>
           )}
           {resume && (
-            <div className={styles["preview-container"]}>
+            <section
+              className={styles["preview-container"]}
+              aria-label="Preview"
+            >
               <Preview data={resume} />
-            </div>
+            </section>
           )}
         </div>
-      </div>
-    </main>
+      </section>
+    </>
   );
 }
