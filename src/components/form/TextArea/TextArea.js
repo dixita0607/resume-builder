@@ -6,7 +6,12 @@ const TextArea = ({ name, label, ...rest }) => {
       <label className={styles.label} htmlFor={name}>
         {label}
       </label>
-      <textarea className={styles.textarea} name={name} {...rest}></textarea>
+      <textarea
+        id={name}
+        className={styles.textarea}
+        name={name}
+        {...rest}
+      ></textarea>
     </div>
   );
 };

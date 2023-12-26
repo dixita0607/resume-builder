@@ -5,7 +5,7 @@ const Input = ({ name, label, ...rest }) => (
     <label className={styles.label} htmlFor={name}>
       {label}
     </label>
-    <input name={name} {...rest} />
+    <input id={name} name={name} {...rest} />
   </div>
 );
 

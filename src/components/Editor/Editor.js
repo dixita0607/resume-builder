@@ -86,6 +86,7 @@ export default function Editor({
             <input
               type="checkbox"
               name="autosave"
+              id="autosave"
               checked={autoSave}
               className={styles.autosaveInput}
               onChange={(e) => onAutoSaveChange(e.target.checked)}
