@@ -19,7 +19,9 @@ const OnePage = ({ resume }) => {
             <span className={styles.divider} aria-hidden>
               |
             </span>
-            <a href={resume.basics.url}>Website</a>
+            <a href={resume.basics.url} aria-label="Url">
+              {resume.basics.url}
+            </a>
           </div>
         </header>
         <div className={styles.sectionLine} />

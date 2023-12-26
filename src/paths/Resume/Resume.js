@@ -9,12 +9,13 @@ import styles from "./Resume.module.css";
 export default function Resume() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { resume, setResume, save } = useResume(id);
+  const { resume, setResume, save, autoSave, setAutoSave } = useResume(id);
 
   const handleSave = () => {
     save();
     navigate(-1);
   };
+
   const handleCancel = () => navigate(-1);
 
   return (
@@ -29,6 +30,8 @@ export default function Resume() {
                 onChange={setResume}
                 onSave={handleSave}
                 onCancel={handleCancel}
+                autoSave={autoSave}
+                onAutoSaveChange={setAutoSave}
               />
             </section>
           )}

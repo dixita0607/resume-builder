@@ -4,7 +4,14 @@ import TextArea from "../form/TextArea/TextArea";
 import { setIn } from "../../utils/objArr";
 import styles from "./Editor.module.css";
 
-export default function Editor({ resume, onChange, onSave, onCancel }) {
+export default function Editor({
+  resume,
+  onChange,
+  onSave,
+  onCancel,
+  autoSave,
+  onAutoSaveChange,
+}) {
   const formRef = useRef(null);
 
   const handleSubmit = (e) => {
@@ -77,13 +84,26 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
       className={styles["editor-form"]}
       aria-label="Resume Form"
     >
-      <div className={styles["form-buttons"]}>
+      <div className={styles["form-toolbar"]}>
         <h2 className={styles["resume-title"]}>{resume?.title}</h2>
-        <div aria-label="Actions">
+        <div aria-label="Actions" className={styles["form-actions"]}>
+          <div className={styles["autosave"]}>
+            <input
+              type="checkbox"
+              name="autosave"
+              checked={autoSave}
+              onChange={(e) => onAutoSaveChange(e.target.checked)}
+            />
+            <label htmlFor="autosave">Auto save</label>
+          </div>
+          {" | "}
+          <button className="link" disabled={!!autoSave}>
+            Save
+          </button>
+          {" | "}
           <button type="button" className="link danger" onClick={onCancel}>
             Cancel
           </button>
-          <button>Save</button>
         </div>
       </div>
       <div className={styles["form-section"]} aria-hidden>

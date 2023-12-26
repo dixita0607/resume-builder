@@ -30,6 +30,7 @@ export const useResumes = () => {
 
 export const useResume = (id) => {
   const [resume, setResume] = useState(null);
+  const [autoSave, setAutoSave] = useState(false);
 
   const { getById, update } = useContext(ResumesContext);
 
@@ -41,9 +42,17 @@ export const useResume = (id) => {
     fetchResume();
   }, [getById, id]);
 
+  useEffect(() => {
+    if (autoSave) {
+      update(resume.id, resume).catch((err) => console.error(err));
+    }
+  }, [autoSave, resume, update]);
+
   return {
     resume,
-    setResume: (newResume) => setResume(newResume),
+    autoSave,
+    setAutoSave,
+    setResume,
     save: async () => {
       await update(resume.id, resume);
     },
