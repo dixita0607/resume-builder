@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-body.theme-none {
+body {
   --bg-color: #ffffff;
   --complimentary-bg-color: #edede9;
   --primary-color: #212529;
@@ -22,9 +22,6 @@ body.theme-none {
   --sub-text-color: #8d99ae;
   --border-color: #ced4da;
   --disabled-bg: #5f6469;
-}
-
-body {
   background-color: var(--bg-color);
 }
 
