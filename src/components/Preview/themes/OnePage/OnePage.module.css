@@ -32,7 +32,6 @@ ul {
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
-  -webkit-box-shadow: 2px 2px 4px #aaa;
 }
 
 .sectionBlock {
@@ -104,5 +103,22 @@ ul {
   .sectionName {
     width: auto;
     margin-right: 4px;
+  }
+}
+
+@media print {
+  .container {
+    min-height: unset;
+    max-height: unset;
+    overflow-y: unset;
+    padding: 0;
+    border: none;
+  }
+  .resume {
+    display: block;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 }

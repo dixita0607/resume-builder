@@ -2,3 +2,9 @@
   color: var(--primary-color);
   text-align: center;
 }
+
+@media print {
+  .header {
+    display: none;
+  }
+}
