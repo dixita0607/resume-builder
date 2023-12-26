@@ -1,0 +1,12 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: resume-builder
+Upstream-Contact: Dixita Ganatra <contact@dixita.dev>
+Source: https://resume-builder.remoteinning.dixita.dev
+
+Files: *
+Copyright: 2023 Dixita Ganatra <contact@dixita.dev>
+License: AGPL-3.0-or-later
+
+Files: src/components/Preview/themes/OnePage/*
+Copyright: 2015 Ainsley Chong, 2023 Dixita Ganatra <contact@dixita.dev>
+License: MIT
