@@ -2,16 +2,20 @@
 
 }
 
-.editor-form > fieldset {
+.resume-title {
+  color: var(--primary-color);
+  text-align: center;
+} 
+
+.form-section {
   border: 0;
   border-radius: 4px;
   margin-bottom: 16px;
-  background-color: var(--complimentary-bg-color);
   display: flex;
   flex-direction: column;
 }
 
-.editor-form > fieldset > legend {
+.form-section-title {
   font-size: 20px;
   font-weight: bold;
   padding-top: 48px;
@@ -20,10 +24,16 @@
   background-color: transparent;
 }
 
+.form-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .section-card {
   border-radius: 4px;
   padding: 8px;
-  border: 0.5px solid var(--primary-color);
+  border: 0.5px solid var(--border-color);
   display: flex;
   flex-direction: column;
   margin-bottom: 8px;

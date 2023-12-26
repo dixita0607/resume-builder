@@ -21,7 +21,6 @@ export default function Resume() {
     <>
       <Header />
       <div className={styles["resume-container"]}>
-        <h2 className={styles["resume-title"]}>{resume?.title}</h2>
         <div className={styles["editor-preview-container"]}>
           {resume && (
             <div className={styles["editor-container"]}>

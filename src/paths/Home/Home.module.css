@@ -8,6 +8,7 @@
   padding: 32px;
   border-radius: 4px;
   width: 400px;
+  background-color: var(--complimentary-bg-color);
 }
 
 .resume-form {

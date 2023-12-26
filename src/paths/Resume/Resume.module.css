@@ -3,11 +3,6 @@
   padding-top: 0;
 }
 
-.resume-title {
-  color: var(--primary-color);
-  text-align: center;
-}
-
 .editor-preview-container {
   display: flex;
   justify-content: center;
@@ -15,14 +10,34 @@
 
 .editor-container {
   max-height: 76vh;
+  max-width: 40vw;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 32px;
   border-radius: 4px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--border-color);
 }
 
 .preview-container {
   flex: 1;
   margin-left: 32px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .editor-preview-container {
+    flex-direction: column;
+  }
+  .resume-container {
+    padding: 8px;
+  }
+  .editor-container {
+    padding: 8px;
+    max-height: unset;
+    max-width: unset;
+    overflow: auto;
+  }
+  .preview-container {
+    margin-left: 0;
+    margin-top: 16px;
+  }
 }

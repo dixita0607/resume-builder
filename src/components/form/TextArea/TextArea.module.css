@@ -7,3 +7,8 @@
 .textarea-container > label {
   font-size: 12px;
 }
+
+.textarea-container > textarea {
+  min-width: 300px;
+  resize: none
+}

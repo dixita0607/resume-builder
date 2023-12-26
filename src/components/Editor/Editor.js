@@ -76,12 +76,17 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
       onSubmit={handleSubmit}
       className={styles["editor-form"]}
     >
-      <button>Save</button>
-      <button type="button" className="link danger" onClick={onCancel}>
-        Cancel
-      </button>
-      <fieldset>
-        <legend>Personal Information</legend>
+      <div className={styles["form-buttons"]}>
+        <h2 className={styles["resume-title"]}>{resume?.title}</h2>
+        <div>
+          <button type="button" className="link danger" onClick={onCancel}>
+            Cancel
+          </button>
+          <button>Save</button>
+        </div>
+      </div>
+      <div className={styles["form-section"]}>
+        <div className={styles["form-section-title"]}>Personal Information</div>
         <div className="row">
           <Input
             label="Name"
@@ -97,8 +102,6 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
             value={resume.basics.label}
             onChange={handleChange(["basics", "label"])}
           />
-        </div>
-        <div className="row">
           <Input
             label="Email"
             type="email"
@@ -121,17 +124,18 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
             onChange={handleChange(["basics", "url"])}
           />
         </div>
-        <TextArea
-          label="Summary"
-          name="basics.summary"
-          cols="80"
-          rows="4"
-          value={resume.basics.summary}
-          onChange={handleChange(["basics", "summary"])}
-        />
-      </fieldset>
-      <fieldset>
-        <legend>Experience</legend>
+        <div className="row">
+          <TextArea
+            label="Summary"
+            name="basics.summary"
+            rows="4"
+            value={resume.basics.summary}
+            onChange={handleChange(["basics", "summary"])}
+          />
+        </div>
+      </div>
+      <div className={styles["form-section"]}>
+        <div className={styles["form-section-title"]}>Experience</div>
         {resume.work.map((work, index) => (
           <div key={index.toString()} className={styles["section-card"]}>
             <button
@@ -156,14 +160,14 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
                 value={work.url}
                 onChange={handleChange(["work", index, "url"])}
               />
+              <Input
+                label="Position"
+                type="text"
+                name={`work.${index}.position`}
+                value={work.position}
+                onChange={handleChange(["work", index, "position"])}
+              />
             </div>
-            <Input
-              label="Position"
-              type="text"
-              name={`work.${index}.position`}
-              value={work.position}
-              onChange={handleChange(["work", index, "position"])}
-            />
             <div className="row">
               <Input
                 label="Start Date"
@@ -182,14 +186,15 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
                 onChange={handleChange(["work", index, "endDate"])}
               />
             </div>
-            <TextArea
-              label="Summary"
-              name={`work.${index}.summary`}
-              cols="80"
-              rows="4"
-              value={work.summary}
-              onChange={handleChange(["work", index, "summary"])}
-            />
+            <div className="row">
+              <TextArea
+                label="Summary"
+                name={`work.${index}.summary`}
+                rows="4"
+                value={work.summary}
+                onChange={handleChange(["work", index, "summary"])}
+              />
+            </div>
           </div>
         ))}
         <button
@@ -199,9 +204,9 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         >
           Add Experience
         </button>
-      </fieldset>
-      <fieldset>
-        <legend>Education</legend>
+      </div>
+      <div className={styles["form-section"]}>
+        <div className={styles["form-section-title"]}>Education</div>
         {resume.education.map((education, index) => (
           <div key={index.toString} className={styles["section-card"]}>
             <button
@@ -226,8 +231,6 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
                 value={education.url}
                 onChange={handleChange(["education", index, "url"])}
               />
-            </div>
-            <div className="row">
               <Input
                 label="Area"
                 type="text"
@@ -252,7 +255,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
             </div>
             <div className="row">
               <Input
-                label="Date"
+                label="Start Date"
                 type="text"
                 placeholder="YYYY-MM-DD"
                 name={`education.${index}.startDate`}
@@ -260,7 +263,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
                 onChange={handleChange(["education", index, "startDate"])}
               />
               <Input
-                label="Date"
+                label="End Date"
                 type="text"
                 placeholder="YYYY-MM-DD"
                 name={`education.${index}.endDate`}
@@ -277,9 +280,9 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         >
           Add Education
         </button>
-      </fieldset>
-      <fieldset>
-        <legend>Skills</legend>
+      </div>
+      <div className={styles["form-section"]}>
+        <div className={styles["form-section-title"]}>Skills</div>
         {resume.skills.map((skill, index) => (
           <div key={index.toString()} className={styles["section-card"]}>
             <button
@@ -305,14 +308,16 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
                 onChange={handleChange(["skills", index, "level"])}
               />
             </div>
-            <Input
-              label="Keywords"
-              type="text"
-              placeholder="Comma separated values"
-              name={`skills.${index}.keywords`}
-              value={skill.keywords.join(", ")}
-              onChange={handleKeywordsChange(index)}
-            />
+            <div className="row">
+              <Input
+                label="Keywords"
+                type="text"
+                placeholder="Comma separated values"
+                name={`skills.${index}.keywords`}
+                value={skill.keywords.join(", ")}
+                onChange={handleKeywordsChange(index)}
+              />
+            </div>
           </div>
         ))}
         <button
@@ -322,7 +327,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         >
           Add Skill
         </button>
-      </fieldset>
+      </div>
     </form>
   );
 }
