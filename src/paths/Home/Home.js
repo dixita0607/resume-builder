@@ -22,12 +22,12 @@ function Home() {
   return (
     <>
       <Header />
-      <section className={styles["home-container"]} aria-label="Interface">
-        <div className={styles["home-container-card"]} aria-label="Card">
+      <section className={styles.homeContainer} aria-label="Interface">
+        <div className={styles.homeContainerCard} aria-label="Card">
           <form
             onSubmit={handleAddResume}
             ref={formRef}
-            className={styles["resume-form"]}
+            className={styles.resumeForm}
             aria-label="Add Resume"
           >
             <input
@@ -39,19 +39,16 @@ function Home() {
             <button>Add</button>
           </form>
           {resumes.length > 0 ? (
-            <ul className={styles["resume-list"]} aria-label="Resumes">
+            <ul className={styles.resumeList} aria-label="Resumes">
               {resumes.map((resume) => (
-                <li className={styles["list-item"]} key={resume.id}>
-                  <span
-                    className={styles["list-title"]}
-                    aria-label={resume.title}
-                  >
+                <li className={styles.listItem} key={resume.id}>
+                  <span className={styles.listTitle} aria-label={resume.title}>
                     {resume.title}
                   </span>
                   <span aria-label="Actions">
                     <Link to={`/${resume.id}`}>
                       <button
-                        className={`link ${styles["list-button"]}`}
+                        className={`link ${styles.listButton}`}
                         type="button"
                       >
                         Edit
@@ -59,7 +56,7 @@ function Home() {
                     </Link>
                     <button
                       type="button"
-                      className={`link danger ${styles["list-button"]}`}
+                      className={`link danger ${styles.listButton}`}
                       onClick={() => handleRemoveResume(resume.id)}
                     >
                       Delete
@@ -69,7 +66,7 @@ function Home() {
               ))}
             </ul>
           ) : (
-            <div className={styles["empty-placeholder"]}>
+            <div className={styles.emptyPlaceholder}>
               No resume available. Please add one to proceed.
             </div>
           )}

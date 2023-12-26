@@ -21,10 +21,10 @@ export default function Resume() {
   return (
     <>
       <Header />
-      <section className={styles["resume-container"]} aria-label="Interface">
-        <div className={styles["editor-preview-container"]}>
+      <section className={styles.container} aria-label="Interface">
+        <div className={styles.editorPreviewContainer}>
           {resume && (
-            <section className={styles["editor-container"]} aria-label="Editor">
+            <section className={styles.editorContainer} aria-label="Editor">
               <Editor
                 resume={resume}
                 onChange={setResume}
@@ -36,10 +36,7 @@ export default function Resume() {
             </section>
           )}
           {resume && (
-            <section
-              className={styles["preview-container"]}
-              aria-label="Preview"
-            >
+            <section className={styles.previewContainer} aria-label="Preview">
               <Preview data={resume} />
             </section>
           )}

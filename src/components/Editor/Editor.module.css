@@ -1,13 +1,13 @@
-.editor-form h2 {
+.editorForm h2 {
   margin: 0;
 }
 
-.resume-title {
+.title {
   color: var(--primary-color);
   text-align: center;
 }
 
-.form-section {
+.formSection {
   border: 0;
   border-radius: 4px;
   margin-bottom: 16px;
@@ -15,7 +15,7 @@
   flex-direction: column;
 }
 
-.form-section-title {
+.formSectionTitle {
   font-weight: bold;
   padding-top: 48px;
   margin-bottom: 8px;
@@ -23,13 +23,13 @@
   background-color: transparent;
 }
 
-.form-toolbar {
+.toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.form-actions {
+.actions {
   display: flex;
   align-items: center;
 }
@@ -44,7 +44,7 @@
   margin: 0 4px 0 0;
 }
 
-.section-card {
+.sectionCard {
   border-radius: 4px;
   padding: 8px;
   border: 0.5px solid var(--border-color);
@@ -53,10 +53,10 @@
   margin-bottom: 8px;
 }
 
-.delete-button {
+.deleteButton {
   align-self: flex-end;
 }
 
-.add-button {
+.addButton {
   align-self: flex-end;
 }

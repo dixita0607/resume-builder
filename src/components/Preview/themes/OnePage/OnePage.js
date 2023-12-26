@@ -2,14 +2,14 @@ import styles from "./OnePage.module.css";
 
 const OnePage = ({ resume }) => {
   return (
-    <section className={styles["one-page-container"]} aria-label="Resume">
-      <div className={styles["resume"]} aria-label="Card">
+    <section className={styles.container} aria-label="Resume">
+      <div className={styles.resume} aria-label="Card">
         <header aria-label="Header">
-          <h1>
+          <h2>
             <span aria-label="Name">{resume.basics.name}</span>
             <span aria-hidden>{resume.basics.label ? ", " : null}</span>
             <span aria-label="Label">{resume.basics.label}</span>
-          </h1>
+          </h2>
           <div aria-label="Sub heading">
             <span aria-label="Email">{resume.basics.email}</span>
             <span className={styles.divider} aria-hidden>

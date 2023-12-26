@@ -1,48 +1,48 @@
-.home-container {
+.homeContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.home-container-card {
+.homeContainerCard {
   padding: 32px;
   border-radius: 4px;
   width: 400px;
   background-color: var(--complimentary-bg-color);
 }
 
-.resume-form {
+.resumeForm {
   display: flex;
   align-items: center;
 }
 
-.resume-form input {
+.resumeForm input {
   flex: 1;
   margin-right: 8px;
 }
 
-.resume-list {
+.resumeList {
   padding: 0;
   margin-top: 16px;
   list-style: none;
 }
 
-.list-item {
+.listItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.list-title {
+.listTitle {
   flex: 1;
 }
 
-.list-button {
+.listButton {
   padding-right: 0;
   text-align: right;
 }
 
-.empty-placeholder {
+.emptyPlaceholder {
   margin: 32px 0;
   color: var(--sub-text-color);
 }

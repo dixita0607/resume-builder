@@ -1,14 +1,14 @@
-.textarea-container {
+.container {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
 }
 
-.textarea-container > label {
+.container > label {
   font-size: 12px;
 }
 
-.textarea-container > textarea {
+.container > textarea {
   min-width: 300px;
   resize: none;
 }

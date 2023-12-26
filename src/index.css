@@ -21,6 +21,7 @@ body.theme-none {
   --complimentary-color: #ffffff;
   --sub-text-color: #8d99ae;
   --border-color: #ced4da;
+  --disabled-bg: #5f6469;
 }
 
 body {
@@ -49,10 +50,14 @@ button {
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: unset;
 }
 button:active {
   outline: none;
+}
+button:disabled {
+  background-color: var(--disabled-bg);
+  cursor: not-allowed;
 }
 button.link {
   background-color: transparent;

@@ -1,10 +1,10 @@
-.input-container {
+.container {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
   min-width: 300px;
 }
 
-.input-container > label {
+.container > label {
   font-size: 12px;
 }

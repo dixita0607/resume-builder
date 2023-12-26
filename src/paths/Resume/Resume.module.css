@@ -1,14 +1,14 @@
-.resume-container {
+.container {
   padding: 32px;
   padding-top: 0;
 }
 
-.editor-preview-container {
+.editorPreviewContainer {
   display: flex;
   justify-content: center;
 }
 
-.editor-container {
+.editorContainer {
   max-height: 80vh;
   max-width: 40vw;
   overflow-y: scroll;
@@ -18,25 +18,25 @@
   border: 1px solid var(--border-color);
 }
 
-.preview-container {
+.previewContainer {
   flex: 1;
   margin-left: 32px;
 }
 
 @media only screen and (max-width: 1080px) {
-  .editor-preview-container {
+  .editorPreviewContainer {
     flex-direction: column;
   }
-  .resume-container {
+  .container {
     padding: 8px;
   }
-  .editor-container {
+  .editorContainer {
     padding: 8px;
     max-height: unset;
     max-width: unset;
     overflow: auto;
   }
-  .preview-container {
+  .previewContainer {
     margin-left: 0;
     margin-top: 16px;
   }

@@ -81,13 +81,13 @@ export default function Editor({
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className={styles["editor-form"]}
+      className={styles.editorForm}
       aria-label="Resume Form"
     >
-      <div className={styles["form-toolbar"]}>
-        <h2 className={styles["resume-title"]}>{resume?.title}</h2>
-        <div aria-label="Actions" className={styles["form-actions"]}>
-          <div className={styles["autosave"]}>
+      <div className={styles.toolbar}>
+        <h2 className={styles.title}>{resume?.title}</h2>
+        <div aria-label="Actions" className={styles.actions}>
+          <div className={styles.autosave}>
             <input
               type="checkbox"
               name="autosave"
@@ -106,8 +106,8 @@ export default function Editor({
           </button>
         </div>
       </div>
-      <div className={styles["form-section"]} aria-hidden>
-        <div className={styles["form-section-title"]}>Personal Information</div>
+      <div className={styles.formSection} aria-hidden>
+        <div className={styles.formSectionTitle}>Personal Information</div>
         <div className="row" aria-hidden>
           <Input
             label="Name"
@@ -155,13 +155,13 @@ export default function Editor({
           />
         </div>
       </div>
-      <div className={styles["form-section"]} aria-hidden>
-        <div className={styles["form-section-title"]}>Experience</div>
+      <div className={styles.formSection} aria-hidden>
+        <div className={styles.formSectionTitle}>Experience</div>
         {resume.work.map((work, index) => (
-          <div key={index.toString()} className={styles["section-card"]}>
+          <div key={index.toString()} className={styles.sectionCard}>
             <button
               type="button"
-              className={`link danger ${styles["delete-button"]}`}
+              className={`link danger ${styles.deleteButton}`}
               onClick={handleRemoveWork(index)}
             >
               Remove
@@ -220,19 +220,19 @@ export default function Editor({
         ))}
         <button
           type="button"
-          className={styles["add-button"]}
+          className={styles.addButton}
           onClick={handleAddWork}
         >
           Add Experience
         </button>
       </div>
-      <div className={styles["form-section"]} aria-hidden>
-        <div className={styles["form-section-title"]}>Education</div>
+      <div className={styles.formSection} aria-hidden>
+        <div className={styles.formSectionTitle}>Education</div>
         {resume.education.map((education, index) => (
-          <div key={index.toString} className={styles["section-card"]}>
+          <div key={index.toString} className={styles.sectionCard}>
             <button
               type="button"
-              className={`link danger ${styles["delete-button"]}`}
+              className={`link danger ${styles.deleteButton}`}
               onClick={handleRemoveEducation(index)}
             >
               Remove
@@ -295,20 +295,20 @@ export default function Editor({
           </div>
         ))}
         <button
-          className={styles["add-button"]}
+          className={styles.addButton}
           type="button"
           onClick={handleAddEducation}
         >
           Add Education
         </button>
       </div>
-      <div className={styles["form-section"]} aria-hidden>
-        <div className={styles["form-section-title"]}>Skills</div>
+      <div className={styles.formSection} aria-hidden>
+        <div className={styles.formSectionTitle}>Skills</div>
         {resume.skills.map((skill, index) => (
-          <div key={index.toString()} className={styles["section-card"]}>
+          <div key={index.toString()} className={styles.sectionCard}>
             <button
               type="button"
-              className={`link danger ${styles["delete-button"]}`}
+              className={`link danger ${styles.deleteButton}`}
               onClick={handleRemoveSkills(index)}
             >
               Remove
@@ -344,7 +344,7 @@ export default function Editor({
         <button
           type="button"
           onClick={handleAddSkills}
-          className={styles["add-button"]}
+          className={styles.addButton}
         >
           Add Skill
         </button>

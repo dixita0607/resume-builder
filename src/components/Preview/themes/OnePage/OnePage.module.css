@@ -1,4 +1,4 @@
-.one-page-container {
+.container {
   background: var(--complimentary-bg-color);
   font:
     12px "Times New Roman",
@@ -12,13 +12,13 @@
   overflow-y: scroll;
   border: 1px solid var(--border-color);
 }
-.one-page-container ol,
+.container ol,
 ul {
   list-style: none;
   padding: 0;
 }
 
-.one-page-container p,
+.container p,
 ol,
 ul {
   margin: 0;
@@ -84,7 +84,7 @@ ul {
 
 /* Media Queries */
 @media only screen and (max-width: 1080px) {
-  .one-page-container {
+  .container {
     margin: 0;
     padding: 0;
     font-size: 14px;
