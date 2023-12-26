@@ -172,7 +172,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
               <Input
                 label="Start Date"
                 type="text"
-                placeholder="YYYY-MM-DD"
+                placeholder="YYYY-MM"
                 name={`work.${index}.startDate`}
                 value={work.startDate}
                 onChange={handleChange(["work", index, "startDate"])}
@@ -180,7 +180,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
               <Input
                 label="End Date"
                 type="text"
-                placeholder="YYYY-MM-DD"
+                placeholder="YYYY-MM"
                 name={`work.${index}.endDate`}
                 value={work.endDate}
                 onChange={handleChange(["work", index, "endDate"])}
@@ -257,7 +257,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
               <Input
                 label="Start Date"
                 type="text"
-                placeholder="YYYY-MM-DD"
+                placeholder="YYYY-MM"
                 name={`education.${index}.startDate`}
                 value={education.startDate}
                 onChange={handleChange(["education", index, "startDate"])}
@@ -265,7 +265,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
               <Input
                 label="End Date"
                 type="text"
-                placeholder="YYYY-MM-DD"
+                placeholder="YYYY-MM"
                 name={`education.${index}.endDate`}
                 value={education.endDate}
                 onChange={handleChange(["education", index, "endDate"])}

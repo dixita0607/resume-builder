@@ -84,7 +84,7 @@ const OnePage = ({ resume }) => {
               <div key={index.toString()}>
                 <div className={styles.skillBlock}>
                   <span className={styles.title}>
-                    {skill.name} ({skill.level}):{" "}
+                    {skill.name} {skill.level && `(${skill.level})`}:{" "}
                   </span>
                   {skill.keywords.map((keyword, index) => (
                     <span key={index.toString()}>{keyword},</span>
