@@ -18,7 +18,7 @@ export default function Resume() {
   const handleCancel = () => navigate(-1);
 
   return (
-    <>
+    <main>
       <Header />
       <div className={styles["resume-container"]}>
         <div className={styles["editor-preview-container"]}>
@@ -39,6 +39,6 @@ export default function Resume() {
           )}
         </div>
       </div>
-    </>
+    </main>
   );
 }

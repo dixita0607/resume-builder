@@ -20,7 +20,7 @@ function Home() {
   };
 
   return (
-    <>
+    <main>
       <Header />
       <div className={styles["home-container"]}>
         <div className={styles["home-container-card"]}>
@@ -69,7 +69,7 @@ function Home() {
           )}
         </div>
       </div>
-    </>
+    </main>
   );
 }
 

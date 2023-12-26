@@ -4,11 +4,12 @@ const OnePage = ({ resume }) => {
   return (
     <div className={styles["one-page-container"]}>
       <div className={styles["resume"]}>
-        <div className={styles.largeFont}>
-          <span>{resume.basics.name},</span>
-          <span>{resume.basics.label}</span>
-        </div>
-        <div className={styles.smallFont}>
+        <header>
+          <h1>
+            {resume.basics.name}
+            {resume.basics.label ? ", " : null}
+            {resume.basics.label}
+          </h1>
           <div>
             <span>{resume.basics.email}</span>
             <span className={styles.divider}>|</span>
@@ -18,83 +19,71 @@ const OnePage = ({ resume }) => {
               <a href={resume.basics.url}>Website</a>
             </span>
           </div>
-        </div>
-        <div className={styles.sectionLine}></div>
-        <div className={styles.sectionBlock}>
-          <div className={styles.sectionName}>
-            <span>SUMMARY</span>
-          </div>
-          <div className={styles.sectionContent}>
-            <span>{resume.basics.summary}</span>
-          </div>
-        </div>
-        <div className={styles.sectionLine}></div>
-        <div className={styles.sectionBlock}>
-          <div className={styles.sectionName}>
-            <span>EXPERIENCE</span>
-          </div>
-          <div className={styles.sectionContent}>
+        </header>
+        <div className={styles.sectionLine} />
+        <section className={styles.sectionBlock}>
+          <span className={styles.sectionName}>SUMMARY</span>
+          <p className={styles.sectionContent}>{resume.basics.summary}</p>
+        </section>
+        <div className={styles.sectionLine} />
+        <section className={styles.sectionBlock}>
+          <span className={styles.sectionName}>EXPERIENCE</span>
+          <ol className={styles.sectionContent}>
             {resume.work.map((work, index) => (
-              <div className={index.toString()}>
-                <div>
-                  <span className={styles.title}>
-                    {work.position}, <a href={work.url}>{work.name}</a>
-                  </span>
-                  <span className={styles.date}>
-                    {work.startDate} &mdash; {work.endDate || "Present"}
-                  </span>
-                  <div>{work.summary}</div>
-                </div>
-                <div className={styles.separator}></div>
-              </div>
+              <li key={index.toString()}>
+                <span className={styles.title}>
+                  {work.position}
+                  {work.name ? ", " : null}
+                  <a href={work.url}>{work.name}</a>
+                </span>
+                <span className={styles.date}>
+                  {work.startDate} &mdash; {work.endDate || "Present"}
+                </span>
+                <p>{work.summary}</p>
+                {index !== resume.work.length - 1 && (
+                  <div className={styles.separator} />
+                )}
+              </li>
             ))}
-          </div>
-        </div>
-        <div className={styles.sectionLine}></div>
-        <div className={styles.sectionBlock}>
-          <div className={styles.sectionName}>
-            <span>EDUCATION</span>
-          </div>
-          <div className={styles.sectionContent}>
+          </ol>
+        </section>
+        <div className={styles.sectionLine} />
+        <section className={styles.sectionBlock}>
+          <span className={styles.sectionName}>EDUCATION</span>
+          <ol className={styles.sectionContent}>
             {resume.education.map((education, index) => (
-              <div key={index.toString()}>
-                <div>
-                  <span className={styles.title}>
-                    <a href={education.url}>{education.institution}</a>
-                  </span>
-                  <span className={styles.date}>
-                    {education.startDate} &mdash; {education.endDate}
-                  </span>
-                  <div className="">
-                    {education.studyType} - {education.area}
-                  </div>
+              <li key={index.toString()}>
+                <span className={styles.title}>
+                  <a href={education.url}>{education.institution}</a>
+                </span>
+                <span className={styles.date}>
+                  {education.startDate} &mdash; {education.endDate}
+                </span>
+                <div className="">
+                  {education.studyType} - {education.area}
                 </div>
-                <div className={styles.separator}></div>
-              </div>
+                {index !== resume.education.length - 1 && (
+                  <div className={styles.separator} />
+                )}
+              </li>
             ))}
-          </div>
-        </div>
-        <div className={styles.sectionLine}></div>
-        <div className={styles.sectionBlock}>
-          <div className={styles.sectionName}>
-            <span>SKILLS</span>
-          </div>
-          <div className={styles.sectionContent}>
+          </ol>
+        </section>
+        <div className={styles.sectionLine} />
+        <section className={styles.sectionBlock}>
+          <span className={styles.sectionName}>SKILLS</span>
+          <ul className={styles.sectionContent}>
             {resume.skills.map((skill, index) => (
-              <div key={index.toString()}>
-                <div className={styles.skillBlock}>
-                  <span className={styles.title}>
-                    {skill.name} {skill.level && `(${skill.level})`}:{" "}
-                  </span>
-                  {skill.keywords.map((keyword, index) => (
-                    <span key={index.toString()}>{keyword},</span>
-                  ))}
-                </div>
-              </div>
+              <li key={index.toString()} className={styles.skillBlock}>
+                <span className={styles.title}>
+                  {skill.name} {skill.level && `(${skill.level})`}:{" "}
+                </span>
+                {skill.keywords.join(", ")}
+              </li>
             ))}
-          </div>
-        </div>
-        <div className={styles.sectionLine}></div>
+          </ul>
+        </section>
+        <div className={styles.sectionLine} />
       </div>
     </div>
   );

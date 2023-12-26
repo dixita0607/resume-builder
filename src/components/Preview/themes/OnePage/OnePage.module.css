@@ -12,41 +12,27 @@
   overflow-y: scroll;
   border: 1px solid var(--border-color);
 }
-.one-page-container em {
-  color: #999;
+.one-page-container ol,
+ul {
+  list-style: none;
+  padding: 0;
 }
-.one-page-container p {
-  line-height: 1.4;
-}
-.one-page-container ul {
-  margin-bottom: 0;
-}
-.one-page-container li {
-  margin-bottom: 2px;
+
+.one-page-container p,
+ol,
+ul {
+  margin: 0;
 }
 
 .resume {
   margin: 0 auto;
-  max-width: 600px;
+  min-width: 480px;
+  max-width: 720px;
   padding: 40px 60px;
   background: #fff;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 4px #aaa;
   -webkit-box-shadow: 2px 2px 4px #aaa;
-}
-
-.coursesList {
-  width: 28%;
-  vertical-align: top;
-  display: inline-block;
-}
-
-.largeFont {
-  font-size: 20px;
-}
-
-.smallFont {
-  font-size: 12px;
 }
 
 .sectionBlock {
@@ -64,12 +50,6 @@
   width: 80%;
   vertical-align: top;
   display: inline-block;
-}
-
-.sectionContent ul {
-  padding-left: 20px;
-  margin-top: 6px;
-  list-style-type: circle;
 }
 
 .sectionContent .title {
@@ -98,16 +78,8 @@
   margin-right: 5px;
 }
 
-.summary {
-  margin-top: 6px;
-}
-
 .skillBlock {
   margin-bottom: 4px;
-}
-
-.jobBlock {
-  page-break-inside: avoid;
 }
 
 /* Media Queries */
@@ -119,7 +91,6 @@
   }
   .resume {
     margin: 0 auto;
-    max-width: 500px;
     padding: 0.5em 1em;
     border: none;
     overflow-x: scroll;
@@ -133,11 +104,5 @@
   .sectionName {
     width: auto;
     margin-right: 4px;
-  }
-  .largeFont {
-    font-size: 20px;
-  }
-  .smallFont {
-    font-size: 14px;
   }
 }
