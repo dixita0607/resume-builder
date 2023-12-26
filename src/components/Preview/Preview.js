@@ -22,7 +22,7 @@ export default function Preview({ data }) {
         type="button"
         onClick={() => window.print()}
       >
-        Print - {data.meta.theme}
+        Print
       </button>
       {preview}
     </section>
