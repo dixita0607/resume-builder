@@ -20,8 +20,8 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
       setIn(
         resume,
         ["skills", index, "keywords"],
-        e.target.value.split(",").map((v) => v.trim())
-      )
+        e.target.value.split(",").map((v) => v.trim()),
+      ),
     );
 
   const handleAddWork = () =>
@@ -33,7 +33,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         startDate: "",
         endDate: "",
         summary: "",
-      })
+      }),
     );
 
   const handleRemoveWork = (index) => () => {
@@ -50,7 +50,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         startDate: "",
         endDate: "",
         score: "",
-      })
+      }),
     );
   };
 
@@ -63,7 +63,7 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
         name: "",
         level: "",
         keywords: [],
-      })
+      }),
     );
   };
 

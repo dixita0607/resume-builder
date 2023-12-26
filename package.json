@@ -22,7 +22,8 @@
     ]
   },
   "lint-staged": {
-    "*.js": "eslint"
+    "*.js": "eslint --fix",
+    "*.{html,js,css}": "prettier --write"
   },
   "browserslist": {
     "production": [
@@ -39,6 +40,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "husky": "^8.0.0",
-    "lint-staged": "^15.2.0"
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
   }
 }

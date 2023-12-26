@@ -10,5 +10,5 @@
 
 .textarea-container > textarea {
   min-width: 300px;
-  resize: none
+  resize: none;
 }

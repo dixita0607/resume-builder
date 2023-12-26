@@ -1,6 +1,9 @@
 .one-page-container {
   background: var(--complimentary-bg-color);
-  font: 12px "Times New Roman", Times, sans-serif;
+  font:
+    12px "Times New Roman",
+    Times,
+    sans-serif;
   line-height: 1.4;
   padding: 32px;
   border-radius: 4px;
@@ -84,7 +87,7 @@
 .sectionLine {
   border-style: dashed;
   border-width: 1px;
-  border-color: #CFCFCF;
+  border-color: #cfcfcf;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -119,7 +122,7 @@
     max-width: 500px;
     padding: 0.5em 1em;
     border: none;
-    overflow-x: scroll
+    overflow-x: scroll;
   }
   .sectionContent {
     width: 100%;

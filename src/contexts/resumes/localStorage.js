@@ -6,7 +6,7 @@ const add = async (newResume) => {
   const existingResumes = await getAll();
   localStorage.setItem(
     "resumes",
-    JSON.stringify([newResume, ...existingResumes])
+    JSON.stringify([newResume, ...existingResumes]),
   );
   localStorage.setItem(
     `resume.${newResume.id}`,
@@ -16,9 +16,9 @@ const add = async (newResume) => {
           ...defaultResume,
           ...newResume,
         },
-        Object.create(null)
-      )
-    )
+        Object.create(null),
+      ),
+    ),
   );
 };
 
@@ -49,7 +49,7 @@ const remove = async (resumeId) => {
   const existingResumes = await getAll();
   localStorage.setItem(
     "resumes",
-    JSON.stringify(existingResumes.filter((resume) => resume.id !== resumeId))
+    JSON.stringify(existingResumes.filter((resume) => resume.id !== resumeId)),
   );
 };
 
