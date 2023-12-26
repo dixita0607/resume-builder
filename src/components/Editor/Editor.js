@@ -76,10 +76,10 @@ export default function Editor({ resume, onChange, onSave, onCancel }) {
       onSubmit={handleSubmit}
       className={styles["editor-form"]}
     >
-      {/* <button>Save</button>
+      <button>Save</button>
       <button type="button" className="link danger" onClick={onCancel}>
         Cancel
-      </button> */}
+      </button>
       <fieldset>
         <legend>Personal Information</legend>
         <div className="row">

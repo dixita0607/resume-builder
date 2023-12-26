@@ -1,7 +1,5 @@
 .editor-form {
-  border-right: 1px solid var(--sub-text-color);
-  padding: 24px;
-  padding-top: 0;
+
 }
 
 .editor-form > fieldset {

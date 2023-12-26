@@ -1,6 +1,6 @@
 import React from "react";
 import Editor from "../../components/Editor/Editor";
-import Preview from "../../components/Preview";
+import Preview from "../../components/Preview/Preview";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import { useResume } from "../../hooks/resumes";
@@ -24,14 +24,20 @@ export default function Resume() {
         <h2 className={styles["resume-title"]}>{resume?.title}</h2>
         <div className={styles["editor-preview-container"]}>
           {resume && (
-            <Editor
-              resume={resume}
-              onChange={setResume}
-              onSave={handleSave}
-              onCancel={handleCancel}
-            />
+            <div className={styles["editor-container"]}>
+              <Editor
+                resume={resume}
+                onChange={setResume}
+                onSave={handleSave}
+                onCancel={handleCancel}
+              />
+            </div>
           )}
-          {resume && <Preview data={resume} />}
+          {resume && (
+            <div className={styles["preview-container"]}>
+              <Preview data={resume} />
+            </div>
+          )}
         </div>
       </div>
     </>

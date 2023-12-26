@@ -12,3 +12,17 @@
   display: flex;
   justify-content: center;
 }
+
+.editor-container {
+  max-height: 76vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 32px;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+}
+
+.preview-container {
+  flex: 1;
+  margin-left: 32px;
+}
