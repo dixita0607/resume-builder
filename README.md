@@ -34,3 +34,4 @@ Once I completed these points along with making it responsive, I started working
 - Use of hooks along with context everywhere (wherever applicable).
 - Ability to replace localStorage adaptor with indexDB adaptor (in future).
 - Using CSS modules for styling components.
+- Using Husky, lint-staged, eslint and prettier to ensure optimal code quality.
