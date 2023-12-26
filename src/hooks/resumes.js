@@ -44,7 +44,7 @@ export const useResume = (id) => {
 
   useEffect(() => {
     if (autoSave) {
-      update(resume.id, resume).catch((err) => console.error(err));
+      update(resume.meta.id, resume).catch((err) => console.error(err));
     }
   }, [autoSave, resume, update]);
 
@@ -54,7 +54,7 @@ export const useResume = (id) => {
     setAutoSave,
     setResume,
     save: async () => {
-      await update(resume.id, resume);
+      await update(resume.meta.id, resume);
     },
   };
 };

@@ -31,6 +31,7 @@ function Home() {
             aria-label="Add Resume"
           >
             <input
+              className={styles.input}
               type="text"
               name="title"
               placeholder="Enter title for your resume"

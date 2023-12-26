@@ -1,6 +1,6 @@
-import styles from "./OnePage.module.css";
+import onePageStyles from "./OnePage.module.css";
 
-const OnePage = ({ resume }) => {
+const OnePage = ({ resume, styles = onePageStyles }) => {
   return (
     <section className={styles.container} aria-label="Resume">
       <div className={styles.resume} aria-label="Card">
@@ -43,7 +43,11 @@ const OnePage = ({ resume }) => {
           </span>
           <ol className={styles.sectionContent} aria-label="Experience list">
             {resume.work.map((work, index) => (
-              <li key={index.toString()} aria-label="Experience">
+              <li
+                className={styles.sectionListItems}
+                key={index.toString()}
+                aria-label="Experience"
+              >
                 <span className={styles.title} aria-label="Position">
                   {work.position}
                   {work.name ? ", " : null}
@@ -52,7 +56,9 @@ const OnePage = ({ resume }) => {
                 <span className={styles.date} aria-label="Duration">
                   {work.startDate} &mdash; {work.endDate || "Present"}
                 </span>
-                <p aria-label="Summary">{work.summary}</p>
+                <p className={styles.summary} aria-label="Summary">
+                  {work.summary}
+                </p>
                 {index !== resume.work.length - 1 && (
                   <div className={styles.separator} />
                 )}

@@ -78,20 +78,16 @@ export default function Editor({
     onChange(setIn(resume, ["skills", index]));
 
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      className={styles.editorForm}
-      aria-label="Resume Form"
-    >
+    <form ref={formRef} onSubmit={handleSubmit} aria-label="Resume Form">
       <div className={styles.toolbar}>
-        <h2 className={styles.title}>{resume?.title}</h2>
+        <h2 className={styles.title}>{resume.meta.title}</h2>
         <div aria-label="Actions" className={styles.actions}>
           <div className={styles.autosave}>
             <input
               type="checkbox"
               name="autosave"
               checked={autoSave}
+              className={styles.autosaveInput}
               onChange={(e) => onAutoSaveChange(e.target.checked)}
             />
             <label htmlFor="autosave">Auto save</label>
@@ -104,6 +100,20 @@ export default function Editor({
           <button type="button" className="link danger" onClick={onCancel}>
             Cancel
           </button>
+        </div>
+      </div>
+      <div className={styles.formSection} aria-hidden>
+        <div className={styles.formSectionTitle}>Theme</div>
+        <div className="row">
+          <select
+            name="theme"
+            value={resume.meta.theme || "onepage"}
+            onChange={handleChange(["meta", "theme"])}
+            className={styles.themeSelector}
+          >
+            <option value="onepage">One page</option>
+            <option value="onepagePride">One page - Pride</option>
+          </select>
         </div>
       </div>
       <div className={styles.formSection} aria-hidden>

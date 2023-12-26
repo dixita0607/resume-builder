@@ -2,19 +2,19 @@ import uuid4 from "uuid4";
 import defaultResume from "../../utils/resume-schema.json";
 import dixitasDefaultResume from "../../utils/dixitas-resume.json";
 
-const add = async (newResume) => {
+const add = async (meta) => {
   const existingResumes = await getAll();
+  localStorage.setItem("resumes", JSON.stringify([meta, ...existingResumes]));
   localStorage.setItem(
-    "resumes",
-    JSON.stringify([newResume, ...existingResumes]),
-  );
-  localStorage.setItem(
-    `resume.${newResume.id}`,
+    `resume.${meta.id}`,
     JSON.stringify(
       Object.assign(
         {
           ...defaultResume,
-          ...newResume,
+          meta: {
+            ...defaultResume.meta,
+            ...meta,
+          },
         },
         Object.create(null),
       ),
@@ -25,12 +25,19 @@ const add = async (newResume) => {
 const getAll = async () => {
   const resumes = JSON.parse(localStorage.getItem("resumes"));
   if (!resumes) {
-    localStorage.setItem("resumes", JSON.stringify([]));
-    await add({
+    let resume = {
       ...dixitasDefaultResume,
-      id: uuid4(),
-      title: "Dixita (Demo)",
-    });
+      meta: {
+        ...dixitasDefaultResume.meta,
+        id: uuid4(),
+        title: "Dixita (Demo)",
+      },
+    };
+    localStorage.setItem(
+      "resumes",
+      JSON.stringify([{ id: resume.meta.id, title: resume.meta.title }]),
+    );
+    localStorage.setItem(`resume.${resume.meta.id}`, JSON.stringify(resume));
     return JSON.parse(localStorage.getItem("resumes"));
   }
   return resumes;

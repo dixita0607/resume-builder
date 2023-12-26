@@ -4,11 +4,11 @@
   margin-bottom: 16px;
 }
 
-.container > label {
+.label {
   font-size: 12px;
 }
 
-.container > textarea {
+.textarea {
   min-width: 300px;
   resize: none;
 }

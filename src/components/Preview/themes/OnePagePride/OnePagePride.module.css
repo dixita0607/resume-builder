@@ -1,5 +1,5 @@
 .container {
-  background: var(--complimentary-bg-color);
+  background: violet;
   font:
     12px "Times New Roman",
     Times,
@@ -44,7 +44,14 @@
   padding: 0;
   width: 80%;
   vertical-align: top;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sectionListItems {
+  max-width: 45%;
+  margin-right: 16px;
 }
 
 .title {
@@ -53,6 +60,7 @@
 
 .date {
   float: right;
+  margin-left: 8px;
 }
 
 .separator {

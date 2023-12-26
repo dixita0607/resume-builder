@@ -1,9 +1,6 @@
-.editorForm h2 {
-  margin: 0;
-}
-
 .title {
   color: var(--primary-color);
+  margin: 0;
   text-align: center;
 }
 
@@ -27,6 +24,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.themeSelector {
+  padding: 6px;
+  border-radius: 4px;
+  border: 0.5px solid var(--border-color);
+  background: none;
 }
 
 .actions {
@@ -40,7 +45,7 @@
   align-items: center;
 }
 
-.autosave > input {
+.autosaveInput {
   margin: 0 4px 0 0;
 }
 
